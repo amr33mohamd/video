@@ -41,7 +41,7 @@ class VideoController extends Controller
 
   public function createRoom(Request $request)
   {
-      $client = new Client('AC1473240afa02f14da6110b8d43bf55ee', '1140dc7df4b6453301f6448c06c22a04');
+      $client = new Client('ACd6ba44d9544cbf2ddabfb5946e1c1891', 'd12cc1ee663cfd40e8024cfbe78e85ec');
 
       $exists = $client->video->rooms->read(['uniqueName' => $request->roomName]);
 
@@ -66,7 +66,7 @@ public function adminJoinRoom($roomName)
     $identity = uniqid();
     // $identity = rand(3,1000);
     Log::debug("joined with identity: $identity");
-    $token = new AccessToken('AC1473240afa02f14da6110b8d43bf55ee', 'SKb79647c79d3f28bf705a90f326004c53','UxqrRr1uF08mm8xPsr1mGjUoYO3Akg3N', 3600, $identity);
+    $token = new AccessToken('ACd6ba44d9544cbf2ddabfb5946e1c1891', 'SK632ab05c9a98ddce1cfdea8f48dca13a','UEbLQ5TAuUOzgXlTSPcxUtap4nsRzgM2', 3600, $identity);
 
     $videoGrant = new VideoGrant();
     $videoGrant->setRoom($roomName);
@@ -81,7 +81,7 @@ public function adminJoinRoom($roomName)
       $identity = uniqid();
       // $identity = rand(3,1000);
       Log::debug("joined with identity: $identity");
-      $token = new AccessToken('AC1473240afa02f14da6110b8d43bf55ee', 'SKb79647c79d3f28bf705a90f326004c53','UxqrRr1uF08mm8xPsr1mGjUoYO3Akg3N', 3600, $identity);
+      $token = new AccessToken('ACd6ba44d9544cbf2ddabfb5946e1c1891', 'SK632ab05c9a98ddce1cfdea8f48dca13a','UEbLQ5TAuUOzgXlTSPcxUtap4nsRzgM2', 3600, $identity);
 
       $videoGrant = new VideoGrant();
       $videoGrant->setRoom($roomName);

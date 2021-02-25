@@ -95,8 +95,11 @@ $('#microphone').click(()=>{
    });
    participant.on('trackRemoved', trackRemoved);
 
-   document.getElementById('media-div').appendChild(div);
-}
+   // if(participant.identity != "{{$auth}}"){
+   //   document.getElementById('media-div').appendChild(div);
+   //
+   // }
+ }
 
 function participantDisconnected(participant) {
    console.log('Participant "%s" disconnected', participant.identity);
@@ -111,6 +114,7 @@ function trackAdded(div, track) {
    if (video) {
        video.setAttribute("class", "col-sm-9");
        video.setAttribute("style", "display:block;margin:0 auto");
+       // video.setAttribute("id", "{{$auth}}"."d");
 
 
    }
@@ -199,6 +203,8 @@ var  muteAudio = () =>{
   <!-- Page Content -->
   <div class="content">
 <iframe width="1049" height="590" src="https://www.youtube.com/embed/g6BprD_IIl4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div id="media-div"  class="col-lg-12">
+
 
 </div>
 <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></script>
