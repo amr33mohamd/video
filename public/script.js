@@ -20,10 +20,13 @@ video.addEventListener('play', () => {
   setInterval(async () => {
     const detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceExpressions()
     if(!detections.length){
-      alert('you are out');
+      video.classList.add("blur");
+
+      // alert('you are out');
     }
     else{
-      console.log('welcome');
+      video.classList.remove("blur");
+
     }
     // const resizedDetections = faceapi.resizeResults(detections, displaySize)
     // canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)

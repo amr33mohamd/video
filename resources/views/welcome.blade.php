@@ -21,6 +21,10 @@
     canvas {
       position: absolute;
     }
+    .blur{
+      -o-filter: blur(15px);
+   filter: blur(30px);
+    }
   </style>
 </head>
 <body>
